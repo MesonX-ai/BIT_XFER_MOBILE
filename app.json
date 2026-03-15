@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "BitXfer Mobile",
+    "slug": "bitxfer-mobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTabletMode": true,
+      "supportsLandscape": true,
+      "infoPlist": {
+        "NSBonjourServices": ["_ftp._tcp", "_sftp-ssh._tcp"]
+      }
+    },
+    "android": {
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": ["INTERNET", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+    },
+    "web": {
+    }
+  }
+}

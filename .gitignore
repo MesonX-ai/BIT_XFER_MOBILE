@@ -1,0 +1,89 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+package-lock.json
+yarn.lock
+
+# Expo
+.expo/
+.expo-shared/
+dist/
+expo-manifest.ts
+
+# Build directories
+build/
+dist/
+.gradle/
+*.apk
+*.aab
+*.ipa
+*.app
+.xcode/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.AppleDouble
+.LSOverride
+*.sublime-*
+.sass-cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Logging
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# System files
+$RECYCLE.BIN/
+ehthumbs.db
+
+# React Native
+react-native.config.js
+android/app/debug.keystore
+
+# Credentials (IMPORTANT: Never commit these!)
+**/credentials.json
+**/secrets.json
+**/private_keys/
+**/*.pem
+**/*.key
+
+# Platform specific
+ios/Pods
+ios/Podfile.lock
+android/gradle.properties

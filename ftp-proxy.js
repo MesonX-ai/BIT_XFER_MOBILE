@@ -24,7 +24,7 @@ const connections = new Map();
  * Test FTP connection
  */
 app.post('/api/ftp/connect', async (req, res) => {
-  const { id, host, port = 21, username, password, secure = false } = req.body;
+  const { id, host, port = 21, username, password, secure = true } = req.body;
 
   // Allow empty password for anonymous FTP
   if (!id || !host || !username || password === undefined) {

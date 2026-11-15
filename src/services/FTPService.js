@@ -2,7 +2,7 @@ import * as FileSystem from 'expo-file-system';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // FTP Proxy Server URL - change this to match your server
-const FTP_PROXY_URL = 'http://localhost:3001/api/ftp';
+const FTP_PROXY_URL = process.env.EXPO_PUBLIC_FTP_PROXY_URL || 'https://example-ftp-proxy.mesonsoft.com/api/ftp';
 
 // Store for active FTP connections (maps connection name to proxy connection)
 const ftpConnections = {};
@@ -49,8 +49,8 @@ class FTPService {
           host: connection.host,
           port: connection.port || 21,
           username: connection.username,
-          password: connection.password || '',
-          secure: connection.isSSL || false,
+          password: connection.password ?? '',
+          secure: connection.isSSL === true || connection.protocol === 'ftps' || connection.protocol === 'sftp',
         };
         
         console.log('Request body:', JSON.stringify(requestBody));
@@ -143,8 +143,8 @@ class FTPService {
         host: connection.host,
         port: connection.port || 21,
         username: connection.username,
-        password: connection.password || '',
-        secure: connection.isSSL || false,
+        password: connection.password ?? '',
+        secure: connection.isSSL === true || connection.protocol === 'ftps' || connection.protocol === 'sftp',
       };
 
       const connectResponse = await fetch(`${proxyUrl}/connect`, {
@@ -219,8 +219,8 @@ class FTPService {
           host: connection.host,
           port: connection.port || 21,
           username: connection.username,
-          password: connection.password || '',
-          secure: connection.isSSL || false,
+          password: connection.password ?? '',
+          secure: connection.isSSL === true || connection.protocol === 'ftps' || connection.protocol === 'sftp',
         };
 
         const connectResponse = await fetch(`${proxyUrl}/connect`, {
@@ -312,8 +312,8 @@ class FTPService {
           host: connection.host,
           port: connection.port || 21,
           username: connection.username,
-          password: connection.password || '',
-          secure: connection.isSSL || false,
+          password: connection.password ?? '',
+          secure: connection.isSSL === true || connection.protocol === 'ftps' || connection.protocol === 'sftp',
         };
 
         const connectResponse = await fetch(`${proxyUrl}/connect`, {
@@ -395,8 +395,8 @@ class FTPService {
         host: connection.host,
         port: connection.port || 21,
         username: connection.username,
-        password: connection.password || '',
-        secure: connection.isSSL || false,
+        password: connection.password ?? '',
+        secure: connection.isSSL === true || connection.protocol === 'ftps' || connection.protocol === 'sftp',
       };
 
       const connectResponse = await fetch(`${proxyUrl}/connect`, {
